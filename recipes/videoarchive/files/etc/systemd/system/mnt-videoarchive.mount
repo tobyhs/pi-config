@@ -1,0 +1,10 @@
+[Unit]
+Before=local-fs.target
+
+[Mount]
+What=/dev/disk/by-label/videoarchive
+Where=/mnt/videoarchive
+Type=ext4
+
+[Install]
+WantedBy=multi-user.target
