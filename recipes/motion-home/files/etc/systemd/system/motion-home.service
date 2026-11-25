@@ -1,0 +1,13 @@
+[Unit]
+Requires=mnt-videoarchive.mount
+After=mnt-videoarchive.mount network.target
+
+[Service]
+Type=simple
+User=motion
+Group=video
+UMask=0007
+ExecStart=/usr/bin/motion -c /etc/motion/home.conf
+
+[Install]
+WantedBy=multi-user.target

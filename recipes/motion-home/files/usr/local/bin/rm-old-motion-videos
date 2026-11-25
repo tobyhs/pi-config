@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+cd /mnt/videoarchive/homevideos
+find . -name '*.mp4' -mtime +14 -delete
+
+for directory in ????-??-??; do
+  if [ -z "$(ls -A "$directory")" ]; then
+    rmdir "$directory"
+  fi
+done

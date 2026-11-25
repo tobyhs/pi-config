@@ -1,0 +1,3 @@
+<%= @start_minute %> <%= @start_hour %> * * * root systemctl start motion-home
+<%= @end_minute %> <%= @end_hour %> * * * root systemctl stop motion-home
+1 22 * * * motion /usr/local/bin/rm-old-motion-videos
